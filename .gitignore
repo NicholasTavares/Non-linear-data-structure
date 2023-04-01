@@ -1,0 +1,53 @@
+# Arquivos e diretórios gerados pelo .NET
+bin/
+obj/
+*.user
+*.suo
+*.userprefs
+
+# Arquivos temporários do sistema
+*.bak
+*.cache
+*.log
+*.swp
+*.swx
+*~
+*.tmp
+*.tmp_proj
+*.log
+*.pidb
+*.swp
+*.swx
+*.userprefs
+
+# Arquivos de configuração do Visual Studio
+.vs/
+*.csproj.user
+*.jfm
+*.pidb
+*.suo
+*.cache
+*.bak.*
+*.ncb
+*.ilk
+*.sbr
+*.pdb
+*.idb
+*.lastbuildstate
+*.svclog
+*.scc
+
+# Arquivos de teste e cobertura de código
+TestResults/
+*.coverage
+*.coveragexml
+
+# Arquivos de configuração do ReSharper e Rider
+_ReSharper*/
+*.resharper
+*.DotSettings.user
+
+# Arquivos e diretórios gerados pelo Visual Studio para Mac
+*.mdb
+*.resourcecache
+*.unityproj

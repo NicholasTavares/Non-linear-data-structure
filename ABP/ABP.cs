@@ -1,3 +1,5 @@
+using System.Text;
+
 namespace ABP {
     class ABP {
         private Node? _root;
@@ -135,6 +137,42 @@ namespace ABP {
             InOrderTraversal(_root, callback);
             Console.Write("]");
             Console.WriteLine("");
+        }
+
+        private void PrintTreeLevel(Node? node, int targetLevel, int currentLevel, int space) {
+            if (node == null) return;
+
+            if (currentLevel == targetLevel) {
+                Console.Write($"{new string(' ', space)}{node._key}{new string(' ', space)}");
+            }
+            else {
+                PrintTreeLevel(node._left, targetLevel, currentLevel + 1, space);
+                PrintTreeLevel(node._right, targetLevel, currentLevel + 1, space);
+            }
+        }
+
+        public void PrintTree() {
+            if (_root == null) {
+                Console.WriteLine("Empty tree.");
+                return;
+            }
+
+            int height = TreeHeight(_root);
+            int space;
+
+            for (int level = 0; level < height; level++) {
+                space = (int)Math.Pow(2, height - level) - 1;
+                PrintTreeLevel(_root, level, 0, space);
+                Console.WriteLine();
+                Console.WriteLine();
+            }
+        }
+
+        private int TreeHeight(Node? node) {
+            if (node == null) {
+                return 0;
+            }
+            return 1 + Math.Max(TreeHeight(node._left), TreeHeight(node._right));
         }
     }
 }
